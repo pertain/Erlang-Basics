@@ -16,11 +16,12 @@
 %% the number of lines to calculate in Pascal's triangle.
 calc_pascal(1) -> [[1]];
 calc_pascal(Nth_line) ->
-	Prev = calc_pascal(Nth_line - 1),
-	[Hd|_] = Prev,
-	[zipwith(fun(X, Y) -> X + Y end, [0] ++ Hd, Hd ++ [0])|Prev].
+    Prev = calc_pascal(Nth_line - 1),
+    [Hd|_] = Prev,
+    [zipwith(fun(X, Y) -> X + Y end, [0] ++ Hd, Hd ++ [0])|Prev].
 
 
 %% Prints the results of calc_pascal to Pascal.txt
 pascal(N) -> write_file("Pascal.txt",
-						fwrite("~190p~n", [reverse(calc_pascal(N))])).
+                        fwrite("~190p~n",
+                               [reverse(calc_pascal(N))])).
