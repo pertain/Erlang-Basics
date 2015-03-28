@@ -28,4 +28,4 @@ light_mixing(_, _, _) -> "Black".
 %% This function checks if the given string is a palindrome.
 %% It is case-insensitive (i.e. RacECar and racecar are equal).
 palindrome(Word) -> equal(to_lower(Word),
-						  to_lower(reverse(Word))).
+                          to_lower(reverse(Word))).
